@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function Container2() {
     const [content, setContent] = useState(
-      'Hi there Iam Abhi am a student at Chennai Institute Of Technology (CIT) pursuing my BTECH degree in Information Technology'
+      'Hi there Iam Abhijeeth VN  a student at Chennai Institute Of Technology (CIT) pursuing my BTECH  degree in Information Technology'
     );
     const [logoSrc, setLogoSrc] = useState('/2.png');
     const handleButtonClick = (event) => {
