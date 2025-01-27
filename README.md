@@ -1,2 +1,1 @@
-![logo]("public/reactt.svg")
-# PORTFOLIO WEBSITE 
+![logo](public/reactt.svg)
