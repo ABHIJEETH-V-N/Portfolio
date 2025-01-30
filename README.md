@@ -1,1 +1,1 @@
-visit <a href="https://hypervisuals.pages.dev">hypervisuals</a>
+<img src="banner.svg"/>
