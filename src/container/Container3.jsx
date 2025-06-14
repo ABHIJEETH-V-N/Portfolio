@@ -39,17 +39,19 @@ function Container3(){
 
 const icons=list.map((abc,index)=>(
   <a  href={abc.href}>
-    <i className={abc.icon}></i>
+    <i id="aa" className={abc.icon}></i>
   </a>
 ));
-    
+let audio = new Audio("sound/pebble.mp3")
+const start = () => {
+  audio.play()
+}
    return(
-    <>
-    <h1>SOCIALS</h1>
-    <div className="ico">
+    <div id="container3">
+    <div className="ico" onMouseOver={start}>
       {icons}
     </div>
-    </>
+    </div>
    );
   }
 

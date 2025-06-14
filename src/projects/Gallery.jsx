@@ -26,10 +26,10 @@ function Gallery() {
     const closeLightbox = () => {
         setLightboxImage(null);
     };
-
     return (
         <div>
-            <h1>Gallery</h1>
+            <div className="poster">
+                <h1>Gallery</h1></div><br/>
             {/* Image Gallery */}
             <div className="gallery">
                 {images.map((im, index) => (
@@ -47,13 +47,15 @@ function Gallery() {
             {lightboxImage && (
                 <div className="lightbox" onClick={closeLightbox}>
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-                        <img src={lightboxImage} alt="Full View" className="lightbox-img" />
+                        <img src={lightboxImage} alt="Full View" className="lib" />
+                        <img src={lightboxImage} alt="Full View" className="li" />
                         <br/><br/>
-                        <span className="close" onClick={closeLightbox}>
-                           close
-                        </span>&nbsp;
-                        <a className="download" href={lightboxImage} download="hyper">DOWNLOAD </a>&nbsp;
-                        <span className=".author">&copy;Created By HYPER VISUALS</span>
+
+                        <div className="opt">
+                            <a id="author" class="fa-solid fa-circle"/>
+                            <a id="close" className="fa-solid fa-xmark" onClick={closeLightbox}/>
+                            <a id="download" className="fa-solid fa-download"  href={lightboxImage} download="hyper"/> 
+                        </div>
                     </div>
                 </div>
             )}

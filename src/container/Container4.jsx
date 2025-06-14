@@ -29,15 +29,15 @@ function Container4() {
       <img src={project.img} alt="Project Thumbnail" />
       <p>{project.description}</p>
       <Link to={project.link}>
-        <button>Check Out</button>
+        <button><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Check Out</button>
       </Link>
     </div>
   ));
 
   return (
     <div>
-      <h1>WORKS</h1>
       <div className="container4">{renderedProjects}</div>
+      
     </div>
   );
 }

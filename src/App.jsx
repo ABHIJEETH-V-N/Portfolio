@@ -16,7 +16,7 @@ import Gallery from "./projects/Gallery";
 function Nav(){
   return(
     <nav>
-    <Link to="/">HYPER</Link>
+    <Link to="/">HYPER<br/>VISUALS</Link>
     <Link to="/gallery" className="fa-regular fa-image"></Link>
     <Link to="/" className="fa-solid fa-house"></Link>
   </nav>
@@ -36,6 +36,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <div className="Main">
      <Nav /><br />
         <Routes>
           <Route path="/" element={<Home/>}/> 
@@ -43,7 +44,12 @@ function App() {
           <Route path="/gallery" element={<Gallery/>}/>
         </Routes>
       </div>
+      </div>
+      <footer>
+        <p>Created by ABHIJEETH V N</p>
+      </footer>
     </Router>
+
   );
 }
 
