@@ -1,5 +1,5 @@
 :root {
-  --card-bg: rgba(80, 80, 80, 0.372);
+  --card-bg: rgba(36, 36, 36, 0.372);
   --nav-bg: rgba(0, 0, 0, 0.6);
   --blur-radius: 10px;
   --font-family: monospace;
@@ -16,14 +16,16 @@
 }
 
 body {
-  padding: var(--padding);
   font-family: var(--font-family);
   overflow-x: hidden;
   margin: 0;
-  background-image: url("assets/reactt.svg");
-  background-size:cover;
+  background-color: black;
 }
 
+.Main{
+  padding: var(--padding);
+  
+}
 h1 {
   line-height: 0.9em;
 }
@@ -38,25 +40,45 @@ a {
 
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  width: 100%;
   background: var(--nav-bg);
   backdrop-filter: blur(var(--blur-radius));
   z-index: 3;
+  gap: 1em;
+  border-radius: 3em;
+  padding: 2em;
+  animation:naive 6s; 
+}
+
+@keyframes naive {
+  0%{transform: translate(-50%,100%);}
+  50%{box-shadow: 0 10px 300px lightblue;}
+  100%{transform: translateY(-50,-100%);}  
+}
+
+
+nav:hover{
+  width: 40em;
+  justify-content: center;
+  justify-content: space-around;
 }
 
 nav a {
   color: var(--font-color);
   text-decoration: none;
-  font-size: var(--font-size);
+  font-size: 1em;
   font-weight: var(--font-weight-bold);
-  padding: 10px 15px;
+  padding: 0.5em;
   border-radius: 5px;
+
   transition: background-color var(--transition-duration), color var(--transition-duration);
 }
-
+nav a:hover{
+  transform: scale(300%);
+}
 #logo {
   background-image: url(assets/Vector\ 8.svg);
 }
@@ -70,22 +92,25 @@ nav a {
     transform: rotate(360deg);
   }
 }
-@keyframes blur {
+@keyframes blurr {
   0% {
-    filter: blur(100px);
+    filter: blur(10px);
   }
   100% {
-    filter: blur(0px);
+    filter: blur(px);
   }
 }
 
 /* Container 1 */
 #container1 {
-  padding: var(--padding);
   text-align: center;
   font-size: 2em;
-  margin: 0;
+  margin: 0%;
 }
+footer{
+  text-align: center;
+}
+
 
 #container1 h1 {
   line-height: 0.8em;
@@ -105,31 +130,25 @@ em {
   backdrop-filter: blur(var(--blur-radius));
   border-radius: var(--border-radius);
   padding: var(--padding);
+  box-shadow: 0 3px 10px  rgb(0, 0, 0) ;
+  
 }
 
-#logo {
-  float: right;
-  height: 10em;
-  background-attachment: fixed;
-  width: 10em;
-  border-radius: 100%;
-}
 
-#logo:hover {
-  animation: wheel var(--animation-duration) infinite;
-}
 
 /* Container 3 */
 #container3 {
-  padding: 5%;
+  background-color:var(--card-bg);
+  border-radius: var(--border-radius);
 }
 
 .ico {
-  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    gap: 10px;
     justify-content: center;
+    justify-content: space-around;
 }
 
 .ico i {
@@ -137,15 +156,17 @@ em {
   backdrop-filter: blur(var(--blur-radius));
   color: var(--font-color);
   border-radius: var(--border-radius);
-  padding: 5%;
-    text-align: center;
-    font-size: 100px;
-    width: 100%;
-    border-radius: 10px;
+  padding: 2em;
+  text-align: center;
+  border-radius: 10px;
 }
-
-.ico i:hover {
-  transform: rotate(10deg);
+#aa:hover{
+  transform:translateY(-30%);
+  background-size: 200%;
+  background-color: #475ec1;
+  background-image: radial-gradient(circle at bottom , rgb(105, 135, 213) 0%, rgb(105, 135, 213) 14.286%,rgb(94, 121, 206) 14.286%, rgb(94, 121, 206) 28.572%,rgb(82, 107, 199) 28.572%, rgb(82, 107, 199) 42.858%,rgb(71, 94, 193) 42.858%, rgb(71, 94, 193) 57.144%,rgb(59, 80, 186) 57.144%, rgb(59, 80, 186) 71.43%,rgb(48, 66, 179) 71.43%, rgb(48, 66, 179) 85.716%,rgb(36, 52, 172) 85.716%, rgb(36, 52, 172) 100.002%);
+  box-shadow:0 20px 20px black ;
+  animation:crore 10s infinite alternate;
 }
 
 /* Container 4 */
@@ -198,8 +219,7 @@ em {
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
+  gap: 1em;
 }
 
 .gallery-image {
@@ -228,61 +248,122 @@ em {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
+  backdrop-filter: blur(10px);
   align-items: center;
   z-index: 1000;
   flex-direction: column;
 }
 
-.lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
+.lib,.li{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 70%;
+  width:70%;
+  object-fit:cover;
+}
+.lib{
+  z-index:1;
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: blur(100px);
+}
+.li{
+  z-index:2;
+  border-radius: 3em;
 }
 
-.close,
-.download,
-.author {
-  background-color: rgba(255, 255, 255, 0.2);
+#close,
+#download,
+#author {
+
   color: var(--font-color);
   border: none;
+  line-height: 0.1px;
   padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1.2em;
   cursor: pointer;
+  font-size:larger;
   transition: all var(--transition-duration) ease;
   text-decoration: none;
 }
 
-.close:hover {
-  background-color: rgba(255, 0, 0, 0.6);
+.opt{
+  position:fixed;
+  bottom: 10%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 1em;
+  gap:1em;
+  background-color:var(--card-bg);
+  filter: brightness(200%);
+  border-radius: 3em;
+  z-index: 99999;
+  backdrop-filter: blur(var(--blur-radius));
+}
+.opt:hover{
+  width: 20em;
+  justify-content: center;
+  justify-content: space-around;
+}
+.opt a:hover{
+  font-size:xx-large;
+  animation: wheel 3s ;
 }
 
-.download:hover {
-  background-color: green;
-  cursor:wait     ;
-}
 
 button {
   padding: 2%;
-  text-align: center;
   font-family: jetbrains mono;
+  text-align: left;
+  line-height: 0.9em;
   font-size: 1em;
+  height:4em;
   border-radius: var(--border-radius);
-  background-color: rgba(0, 0, 0, 0.182);
+  background-color:black;
   color: var(--font-color);
   border: none;
 }
 
 button:hover {
-  border: 0.01em solid var(--font-color);
+  border: 1px solid white;
+  cursor: pointer;
 }
+
+@keyframes crore {
+  0% {
+    background-position: 0% 0%;
+    box-shadow: 0 10px 50px #475ec1;
+
+  }
+  50% {
+    background-position: 100% 100%;
+    box-shadow: 0 10px 100px #475ec1;
+  }
+  100% {
+    background-position: 0% 0%;
+    box-shadow: 0 10px 200px #475ec1;
+  }
+}
+@keyframes crow {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+
 
 /* Project Page */
 .project-page {
   background-color: var(--card-bg);
   height: fit-content;
   width: fit-content;
-  border-radius: var(--border-radius);
   backdrop-filter: blur(var(--blur-radius));
   padding: 20px;
   justify-content: center;
@@ -294,4 +375,66 @@ button:hover {
   width: 100%;
   height: auto;
   max-height: 70vh;
+}
+
+.App{
+  background-color: black;
+}
+.hero{
+  text-align: left;
+  padding: 1em;
+  font-size: large;
+  box-shadow: 0 3px 10px  rgb(0, 0, 0) ;
+  animation:crow 10s infinite alternate;
+  background-size:200%;
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  background-image: radial-gradient(circle at top right, rgb(105, 135, 213) 0%, rgb(105, 135, 213) 14.286%,rgb(94, 121, 206) 14.286%, rgb(94, 121, 206) 28.572%,rgb(82, 107, 199) 28.572%, rgb(82, 107, 199) 42.858%,rgb(71, 94, 193) 42.858%, rgb(71, 94, 193) 57.144%,rgb(59, 80, 186) 57.144%, rgb(59, 80, 186) 71.43%,rgb(48, 66, 179) 71.43%, rgb(48, 66, 179) 85.716%,rgb(36, 52, 172) 85.716%, rgb(36, 52, 172) 100.002%);
+}
+
+@keyframes changeq {
+  0%{background-position-x:10%;background-position-y:10%;}
+  0%{background-position-x:100%;background-position-y:10%;}
+}
+.poster{
+  padding: 1em;
+  text-align: center;
+  background-attachment: fixed;
+  background-clip:padding-box;
+
+}
+.poster h1{
+  font-size:3em;
+}
+svg path{
+  animation: sparkles 2s infinite;
+}
+
+@keyframes sparkles {
+  0%{fill:#3042b3;}
+  20%{fill:#3b50ba ;}
+  40%{fill: #475ec1;}
+  60%{fill: #516bc6;}
+  100%{fill:#5e79ce;}
+}
+
+.out{
+  left: 50%;
+  top: 50%;
+  text-align: center;
+}
+#brush{
+  font-size: 4em;
+  animation: jump 3s infinite alternate;
+}
+
+@keyframes jump {
+  to{
+    transform: translateY(-50%);
+    text-shadow: 0 10px 100px #516bc6;
+  }
+}
+#brush:hover{
+  text-shadow: 0 10px 70px#5e79ce ;
+  color: #5e79ce;
 }
