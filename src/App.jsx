@@ -15,11 +15,14 @@ import Gallery from "./projects/Gallery";
 
 function Nav(){
   return(
+    <>
+    <div className="slide"/>
     <nav>
     <Link to="/">HYPER<br/>VISUALS</Link>
     <Link to="/gallery" className="fa-regular fa-image"></Link>
     <Link to="/" className="fa-solid fa-house"></Link>
-  </nav>
+    </nav> 
+    </>
   );
 }
 
@@ -46,6 +49,7 @@ function App() {
       </div>
       </div>
       <footer>
+        <img className="ab"src="abc.png" height="50%" width="50%"/>
         <p>Created by ABHIJEETH V N</p>
       </footer>
     </Router>

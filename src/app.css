@@ -38,6 +38,7 @@ a {
   line-height: 0.8em;
 }
 
+
 nav {
   position: fixed;
   bottom: 4%;
@@ -46,10 +47,10 @@ nav {
   display: flex;
   background: var(--nav-bg);
   backdrop-filter: blur(var(--blur-radius));
-  z-index: 3;
+  z-index: 10;
   gap: 1em;
   border-radius: 3em;
-  padding: 2em;
+  padding: 1em;
   animation:naive 6s; 
 }
 
@@ -61,15 +62,14 @@ nav {
 
 
 nav:hover{
-  width: 40em;
-  justify-content: center;
   justify-content: space-around;
+  font-size: 2em;
 }
 
 nav a {
   color: var(--font-color);
   text-decoration: none;
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: var(--font-weight-bold);
   padding: 0.5em;
   border-radius: 5px;
@@ -77,7 +77,8 @@ nav a {
   transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 nav a:hover{
-  transform: scale(300%);
+  transform: scale(120%);
+  transform: translateY(-30%);
 }
 #logo {
   background-image: url(assets/Vector\ 8.svg);
@@ -94,10 +95,10 @@ nav a:hover{
 }
 @keyframes blurr {
   0% {
-    filter: blur(10px);
+    filter: blur(0px);
   }
   100% {
-    filter: blur(px);
+    filter: blur(10px);
   }
 }
 
@@ -109,10 +110,34 @@ nav a:hover{
 }
 footer{
   text-align: center;
+  padding: var(--padding);
+}
+.ab{
+  height: 30%;
+  width: 30%;
+}
+
+
+
+
+@keyframes waller {
+  0%{background-image: url("assets/ga/1.png");}  
+  10%{background-image: url("assets/ga/2.png");}  
+  20%{background-image: url("assets/ga/3.png");}  
+  30%{background-image: url("assets/ga/4.png");}  
+  40%{background-image: url("assets/ga/5.png");}  
+  50%{background-image: url("assets/ga/6.png");}  
+  60%{background-image: url("assets/ga/7.png");}  
+  70%{background-image: url("assets/ga/8.png");}  
+  80%{background-image: url("assets/ga/9.png");}  
+  90%{background-image: url("assets/ga/10.png");}  
+  100%{background-image: url("assets/ga/11.png");}  
+
 }
 
 
 #container1 h1 {
+  position: relative;
   line-height: 0.8em;
 }
 
@@ -183,9 +208,9 @@ em {
   gap: 1em;
 }
 .work {
-  padding: 20px;
-  justify-content: center;
-  width: 85%;
+  padding:var(--padding);
+  justify-content: space-around;
+
   border-radius: var(--border-radius);
   background-color: var(--card-bg);
   backdrop-filter: blur(var(--blur-radius));
@@ -195,20 +220,34 @@ em {
 .work:hover {
   filter: brightness(var(--filter-brightness-hover));
 }
-
-
-#container4 {
-  padding: 5%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  border-radius: var(--border-radius);
-  gap: 20px;
+.work button{
+  width: 100%;
+  text-align: center;
+  bottom: 5%;
+  transform: translateY(20%);
 }
-.work-4 img:hover{
-  animation:wheel 10s infinite;
+.work-2 img{
+  transform: scale(70%);
+}
+.work img{
+  position: absolute;
+  left: 0%;
+  top: 10%;
+}
+.work button{
+  transform:translatey(10%);
+}
+.work img:hover{
+  transform: scale(50%);
 }
 
-
+.btext{
+  font-size: 10em;
+  text-wrap: wrap;
+  line-height: 0.75em;
+  text-align: left;
+  filter: blur(3px);
+}
 
 
 
@@ -310,6 +349,10 @@ em {
   animation: wheel 3s ;
 }
 
+.opt a:checked{
+  transform: translateY(-30s);
+  transform: scale(10%);
+}
 
 button {
   padding: 2%;
@@ -319,13 +362,14 @@ button {
   font-size: 1em;
   height:4em;
   border-radius: var(--border-radius);
-  background-color:black;
+  background-color:rgba(0, 0, 0, 0.22);
   color: var(--font-color);
+  backdrop-filter: blur(var(--blur-radius));
   border: none;
 }
 
 button:hover {
-  border: 1px solid white;
+  color: #3042b3;
   cursor: pointer;
 }
 
@@ -411,12 +455,13 @@ svg path{
 }
 
 @keyframes sparkles {
-  0%{fill:#3042b3;}
-  20%{fill:#3b50ba ;}
-  40%{fill: #475ec1;}
-  60%{fill: #516bc6;}
-  100%{fill:#5e79ce;}
+  0%{fill:#3042b3;color: #3042b3;}
+  20%{fill:#3b50ba ;color: #3b50ba;}
+  40%{fill: #475ec1;color: #475ec1;}
+  60%{fill: #516bc6;color:#516bc6;}
+  100%{fill:#5e79ce;color: #5e79ce;}
 }
+
 
 .out{
   left: 50%;
@@ -438,3 +483,4 @@ svg path{
   text-shadow: 0 10px 70px#5e79ce ;
   color: #5e79ce;
 }
+
