@@ -19,7 +19,7 @@ function Gallery() {
 
     // Function to open the lightbox
     const openLightbox = (src) => {
-        setLightboxImage(src);
+        setLightboxImage(src);src/projects/Gallery.jsx
     };
 
     // Function to close the lightbox

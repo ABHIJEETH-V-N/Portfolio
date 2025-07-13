@@ -42,13 +42,9 @@ const icons=list.map((abc,index)=>(
     <i id="aa" className={abc.icon}></i>
   </a>
 ));
-let audio = new Audio("sound/pebble.mp3")
-const start = () => {
-  audio.play()
-}
    return(
-    <div id="container3">
-    <div className="ico" onMouseOver={start}>
+    <div className="container" id="container3">
+    <div className="ico">
       {icons}
     </div>
     </div>

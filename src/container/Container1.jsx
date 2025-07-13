@@ -2,7 +2,7 @@ import React from "react";
 function Container1(){
     return (
       <center>
-      <div id='container1'>
+      <div className="container" id='container1'>
         <div className="hero">
           <h1 >HI<br/>IAM &nbsp; <br/>
           ABHIJEETH
@@ -10,6 +10,7 @@ function Container1(){
           <p>ABHIJEETH V N </p>
           </div>
       </div>
+
       </center>
     )
   }
