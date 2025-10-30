@@ -239,6 +239,9 @@ nav:hover{
   display: grid;
   grid-template-columns:repeat(auto-fit,minmax(15em,1fr)) ;
   gap: 1em;
+  animation: slide33 linear reverse;
+  animation-timeline: view();
+  animation-range: entry 0;
 }
 .achievement{
   display: flex;
@@ -252,11 +255,12 @@ nav:hover{
   line-height:1em;
 }
 .achievement a{
-  color:cyan;
+  color:var(--primary-color);
+  font-family:cursive;
   text-decoration: none;
 }
 .achievement a:hover{
-  font-size: large;
+  font-weight: bolder;
 }
 
 .achievement img {
@@ -281,38 +285,41 @@ nav:hover{
 
 /*---------------------------------container-3--------------------------------------*/
 .container3 {
-  background-color:var(--card-bg);
+   background-color:var(--card-bg);
   border-radius: var(--border-radius);
-  position:relative;
-  padding: 5em;
-  z-index: -1;
+  padding: 1em;
+  text-align: center;
   box-shadow:var(--boxshadow);
-  -webkit-backdrop-filter: blur(--blur-radius);
-  backdrop-filter: blur(var(--blur-radius)); 
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(--blur-radius);
+  z-index: 1;
   border: var(--border);
 }
 
 .ico {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    z-index: 99999;
+    z-index: 10;
+    padding: pad;
     gap: 10px;
     justify-content: center;
     justify-content: space-around;
 }
 
 .ico i {
-  background-color: var(--card-bg);
+ background-color: var(--card-bg);
   -webkit-backdrop-filter: blur(var(--blur-radius));
-  backdrop-filter: blur(var(--blur-radius)); 
-  
+  backdrop-filter: blur(--blur-radius);
   color: var(--font-color);
   border-radius: var(--border-radius);
   padding: 2em;
   box-shadow:var(--boxshadow);
   text-align: center;
   border-radius: 10px;
+
+}
+.ico i:hover{
+  transform: scale(120%);
 }
 #aa:hover{
   background-size: 200%;
@@ -320,6 +327,7 @@ nav:hover{
   cursor: pointer;
   box-shadow: 0  10px var(--card-bg);  
 }
+
 
 /*---------------------------------container-4--------------------------------------*/
 .work img {

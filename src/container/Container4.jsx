@@ -50,7 +50,7 @@ function Container4() {
     {
       img:"https://github.com/NEXBIT-X/.github/blob/main/logo.png?raw=true",
       description:"A Website For My Hackathon Team \n",
-      link:"nexbitx.vercel.app",
+      link:"https://nexbitx.vercel.app",
       id:"work work-7",
       title:"NEXBIT",
     },
@@ -73,8 +73,7 @@ function Container4() {
       <p>{project.description}</p>
       <Link to={project.link}>
         <button>
-          <i class="fa-solid fa-magnifying-glass"></i>
-          &nbsp;Check Out
+          View Project
         </button>
       </Link>
     </div>

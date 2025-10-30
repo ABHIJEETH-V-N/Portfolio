@@ -38,17 +38,19 @@ function Container3(){
    ];
 
 const icons=list.map((abc,index)=>(
-  <a  href={abc.href}>
+  <a  href={abc.href} key={index}>
     <i id="aa" className={abc.icon}></i>
   </a>
 ));
    return(
+    <> <h1>SOCIALS</h1>
     <div className="container container3">
-      <h1>SOCIALS</h1>
+     
     <div className="ico">
       {icons}
     </div>
     </div>
+    </>
    );
   }
 

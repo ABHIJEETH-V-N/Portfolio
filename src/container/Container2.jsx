@@ -9,20 +9,20 @@ function Container2() {
  
    const list=[
     {
-      title:"Winner\nGoogle Maps Platform Awards 2025",
+      title:"Fan Favourite Award: Google Maps Platform Awards 2025",
       description: "My Team project won the Google Maps Platform Awards 2025 under the category of sustainability by community votes.",
       link:"https://mapsplatform.google.com/awards/nominees/global-climate-tracker/",
       img:"https://devpost-public.s3.amazonaws.com/Banners/gmpawards-emailbanner.jpeg",
     },
     {
-      title:"Semi-Finalist- WCHL World Computer Hacker League 2025",
-      description: "I lead my team to the top 200 projects out of the 1500 projects submitted worldwide in the WCHL World Computer Hacker League 2025.",
-      link:"",
+      title:"Semi Finalist WCHL World Computer Hacker League 2025",
+      description: "Among 1500+ teams worldwide, my team reached the top 250 teams in the WCHL 2025 hackathon organized by Dorahacks.",
+      link:"https://dorahacks.io/buidl/28686",
       img:"https://cdn.dorahacks.io/static/files/199098d73daea7dff53654e47c493dd6.jpg",
     }
    ];
 
-  const renderedProjects = list.map((abc, index) => (
+  const Achievements = list.map((abc, index) => (
     <div className="achievement" key={index}>
 
     <div style={
@@ -54,7 +54,7 @@ function Container2() {
   return (
     <>
     <h1>Achievements</h1>
-    <div className="container2">{renderedProjects}</div>
+    <div className="container2">{Achievements}</div>
     </>
   );
 }
