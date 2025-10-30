@@ -4,7 +4,7 @@
     --nav-bg: rgba(0, 0, 0, 0.6);
     --bag:black;
     --blur-radius: 10px;
-    --font-family:monospace;
+    --font-family:'JetBrains Mono', monospace;
     --font-size: 18px;
     --font-color: white;
     --font-weight-bold: bold;
@@ -32,7 +32,29 @@
           rgba(36, 52, 172, 0.374) 100.002%);
     --total:none;
     --border-radius: 10px;
+    --button-c:#2a2a2a;
+--button-t:#e0e0e0;
+--button-ts:0 0.0625em 0 #000;
+--button-bs: inset 0 0.0625em 0 0 #3a3a3a,
+    0 0.0625em 0 0 #252525,
+    0 0.125em 0 0 #202020,
+    0 0.25em 0 0 #1c1c1c,
+    0 0.3125em 0 0 #181818,
+    0 0.375em 0 0 #141414,
+    0 0.425em 0 0 #101010,
+    0 0.425em 0.5em 0 #0a0a0a;
+--button-abc:
+    inset 0 0.03em 0 0 #3a3a3a,
+    0 0.03em 0 0 #252525,
+    0 0.0625em 0 0 #202020,
+    0 0.125em 0 0 #1c1c1c,
+    0 0.125em 0 0 #181818,
+    0 0.2em 0 0 #141414,
+    0 0.225em 0 0 #101010,
+    0 0.225em 0.375em 0 #0a0a0a;
+    
 }
+
 
 
 /*------------------------------------main------------------------------------------*/
@@ -41,8 +63,8 @@ body {
   overflow-x: hidden;
   margin: 0;
   color: var(--primary-color);
-  box-shadow: var(--boxshadow);
   background-color: var(--total);
+
 }
 
 .App{
@@ -66,7 +88,9 @@ footer{
   text-align: left;
   position: relative;
   background-color:var(--card-bg);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   box-shadow:var(--boxshadow);
   border:var(--border);
   border-radius: var(--border-radius);
@@ -116,7 +140,9 @@ button {
   background-color:var(--card-bg);
   color: var(--font-color);
   box-shadow:var(--boxshadow);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   border: none;
  
 }
@@ -138,7 +164,9 @@ nav {
   border-radius: 3em;
   padding: 0.4em;
   box-shadow:var(--boxshadow);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   background-color: var(--card-bg);
   animation:naive 6s 1; 
   transform: scale(30%);
@@ -178,7 +206,7 @@ nav:hover{
   font-size: 2em;
   color:var(--primary-color);
   margin: 0%;
-
+  height: fit-content;
 }
 
 .ab{
@@ -207,33 +235,68 @@ nav:hover{
 }
 
 /*---------------------------------container-2--------------------------------------*/
-#container2 {
-  background-color: var(--card-bg);
-  backdrop-filter: blur(var(--blur-radius));
+.container2 {
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(15em,1fr)) ;
+  gap: 1em;
+}
+.achievement{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  gap: var(--gap);
+}
+.achievement h1{
+  line-height:1em;
+}
+.achievement a{
+  color:cyan;
+  text-decoration: none;
+}
+.achievement a:hover{
+  font-size: large;
+}
+
+.achievement img {
+  background-size: contain;
+}
+
+.achievement{
+  justify-content: space-around;
   box-shadow:var(--boxshadow);
   border-radius: var(--border-radius);
-  padding: var(--padding);
+  background-color: var(--card-bg);
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  display: flex;
   border: var(--border);
 }
 
 
 
+
+
+
 /*---------------------------------container-3--------------------------------------*/
-#container3 {
+.container3 {
   background-color:var(--card-bg);
   border-radius: var(--border-radius);
-  padding: var(--padding);
+  position:relative;
+  padding: 5em;
+  z-index: -1;
   box-shadow:var(--boxshadow);
-  backdrop-filter: blur(--blur-radius);
-  z-index: 1;
+  -webkit-backdrop-filter: blur(--blur-radius);
+  backdrop-filter: blur(var(--blur-radius)); 
   border: var(--border);
 }
 
 .ico {
     display: flex;
     flex-wrap: wrap;
-    z-index: 10;
-    padding: pad;
+    position: relative;
+    z-index: 99999;
     gap: 10px;
     justify-content: center;
     justify-content: space-around;
@@ -241,7 +304,9 @@ nav:hover{
 
 .ico i {
   background-color: var(--card-bg);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   color: var(--font-color);
   border-radius: var(--border-radius);
   padding: 2em;
@@ -275,7 +340,9 @@ nav:hover{
   box-shadow:var(--boxshadow);
   border-radius: var(--border-radius);
   background-color: var(--card-bg);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   display: flex;
   flex-direction: column;
   border: var(--border);
@@ -284,6 +351,7 @@ nav:hover{
 
 .work img{
   transform: scale(70%);
+  
 }
 
 .work img:hover{
@@ -307,7 +375,9 @@ nav:hover{
   cursor: pointer;
   border-radius: var(--border-radius);
   filter: opacity(50%);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   transition: transform var(--transition-duration) ease;
 }
 
@@ -326,7 +396,8 @@ nav:hover{
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--blur-radius)); 
   align-items: center;
   z-index: 1000;
   flex-direction: column;
@@ -376,7 +447,9 @@ nav:hover{
   filter: brightness(200%);
   border-radius: 3em;
   z-index: 99999;
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
 }
 .opt:hover{
   width: 20em;
@@ -399,7 +472,9 @@ nav:hover{
   background-color: var(--card-bg);
   height: fit-content;
   width: fit-content;
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   padding: 20px;
   justify-content: center;
   text-align: center;
@@ -476,7 +551,9 @@ svg path{
   transform: scale(300%);
   clip-path: circle();
   box-shadow:var(--boxshadow);
-  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius)); 
+  
   background-color: var(--card-bg);
   animation: bgb 10s infinite alternate ;
 }
@@ -616,6 +693,29 @@ svg path{
     background-color: black;
   }
 }
+
+
+
+/*button*/
+button {
+  font: inherit;
+  background-color:var(--button-c);
+  border: 0;
+  color:var(--button-t);
+  border-radius: 0.5em;
+  font-size: 1.35rem;
+  padding: 0.375em 1em;
+  font-weight: 600;
+  text-shadow:var(--button-ts);
+  box-shadow:var(--button-bs);
+  cursor: pointer;
+}
+button:active {
+  translate: 0 0.225em;
+  box-shadow: var(--button-abc);
+}
+
+
 
 
 

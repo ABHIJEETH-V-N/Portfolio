@@ -1,36 +1,64 @@
 import React from "react";
 import { useState } from 'react';
+import Shift from "../components/Shift";
+
+
 
 function Container2() {
-    const [content, setContent] = useState(
-      'Hi there Iam Abhijeeth VN  a student at Chennai Institute Of Technology (CIT) pursuing my BTECH  degree in Information Technology'
-    );
-    const handleButtonClick = (event) => {
-      if (event.target.id == 'a1') {
-        setContent(
-          'I am a student at Chennai Institute Of Technology (CIT) pursuing my BTECH degree in Information Technology'
-        );
-      } else if (event.target.id == 'a2') {
-        setContent('HYPER VISUALS  is a youtube channel where i showcase some of my 3d art projects');
+  
+ 
+   const list=[
+    {
+      title:"Winner\nGoogle Maps Platform Awards 2025",
+      description: "My Team project won the Google Maps Platform Awards 2025 under the category of sustainability by community votes.",
+      link:"https://mapsplatform.google.com/awards/nominees/global-climate-tracker/",
+      img:"https://devpost-public.s3.amazonaws.com/Banners/gmpawards-emailbanner.jpeg",
+    },
+    {
+      title:"Semi-Finalist- WCHL World Computer Hacker League 2025",
+      description: "I lead my team to the top 200 projects out of the 1500 projects submitted worldwide in the WCHL World Computer Hacker League 2025.",
+      link:"",
+      img:"https://cdn.dorahacks.io/static/files/199098d73daea7dff53654e47c493dd6.jpg",
+    }
+   ];
+
+  const renderedProjects = list.map((abc, index) => (
+    <div className="achievement" key={index}>
+
+    <div style={
+      {
+        backgroundImage:`url(${abc.img})`,
+        backgroundSize:"cover",
+        backgroundPosition:"center", 
+        transition:"0.5s",
+        width:"100%",
+        height:"10em",
+        maxHeight:"50vh",
+        maxWidth:"100vw",
+        borderRadius:" var(--border-radius)",
+        overflow:"hidden",
+        textWrap:"wrap",
       }
-    };
-    return (
-      <div className="container" id="container2">
-        <h1>ABOUT ME &nbsp;
-        <svg width="50" height="50" viewBox="0 0 1353 1353" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1107 0L1029.51 169.125L861 246L1029.51 323.49L1107 492L1183.88 323.49L1353 246L1183.88 169.125M492 184.5L338.25 522.75L0 676.5L338.25 830.25L492 1168.5L645.75 830.25L984 676.5L645.75 522.75M1107 861L1029.51 1029.51L861 1107L1029.51 1183.88L1107 1353L1183.88 1183.88L1353 1107L1183.88 1029.51" fill="#3042b3"/>
-</svg>
-        </h1>
-        <button id="a1" onClick={handleButtonClick}>
-          ABHIJEETH V N
-        </button>
-        &nbsp;
-        <button id="a2" onClick={handleButtonClick}>
-          HYPER
-        </button>
-        <p id="cont">{content}</p>
-      </div>
-    );
-   }
+    }>
+    </div>
+
+    <div>
+    <h1><Shift text={abc.title} interval={100} /></h1>
+    <p>{abc.description}</p>
+    <a href={abc.link}>check it out</a>
+    </div>
+
+    </div>
+  ));
+
+  return (
+    <>
+    <h1>Achievements</h1>
+    <div className="container2">{renderedProjects}</div>
+    </>
+  );
+}
+
+
 
 export default Container2;

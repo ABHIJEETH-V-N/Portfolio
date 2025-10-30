@@ -11,7 +11,7 @@ import Out from "./projects/out";
 import Gallery from "./projects/Gallery";
 import foot from "./assets/foot.svg"
 import Mode from "./Mode";
-
+import { useState,useRef } from "react";
 
 
 function Nav(){
@@ -39,6 +39,30 @@ function Home(){
 
 
 function App() {
+  const [content, setContent] = useState("ABHIJEETH V N");
+    const intervalRef = useRef(null);
+    const originalText = "ABHIJEETH V N";
+    function randomString(length) {
+      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let result = "";
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+    const handleMouseEnter = () => {
+      if (intervalRef.current) return;
+      intervalRef.current = setInterval(() => {
+        setContent(randomString(originalText.length));
+      }, 100);
+    };
+  
+    const handleMouseLeave = () => {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+      setContent(originalText);
+    };
+
   return (
     <div className="App">
     <Router>
@@ -50,11 +74,13 @@ function App() {
         </Routes>
         <footer>
         <h1> 
-          <div className="one">
-          ABHIJEETH V N 
+          <div  className="one" onMouseOver={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
+          {content}
           </div>
-          <div className="two">
-          ABHIJEETH V N 
+          <div className="two" onMouseOver={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
+          {content}
           </div>
         </h1>
           

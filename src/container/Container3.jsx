@@ -43,7 +43,8 @@ const icons=list.map((abc,index)=>(
   </a>
 ));
    return(
-    <div className="container" id="container3">
+    <div className="container container3">
+      <h1>SOCIALS</h1>
     <div className="ico">
       {icons}
     </div>
