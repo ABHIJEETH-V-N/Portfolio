@@ -14,7 +14,10 @@ function Gallery() {
         "ga/9.png",
         "ga/10.png",
         "ga/11.png",
-        "ga/12.png"
+        "ga/12.png",
+        "ga/13.png",
+        "ga/14.png",
+        "ga/15.png"
     ];
 
     // Function to open the lightbox
